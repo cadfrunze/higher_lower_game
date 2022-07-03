@@ -16,6 +16,7 @@ def jocul():
     game0_1 = False
     alegere_1 = random_()
     alegere_2 = random_()
+    scor_provizoriu = 0
     while game0:
         print(logo)
         if game0_1 == True:
@@ -31,16 +32,16 @@ def jocul():
         alegere = input("Who has more followers? Type 'A' or 'B':").lower()
         if alegere == "a":
             if alegere_1["follower_count"] >= alegere_2["follower_count"]:
-                scor = scor + 1
                 alegere_1 = alegere_2
+                scor = scor + 1
                 alegere_2 = random_()
             else:
                 game0 = False
         elif alegere == "b":
             if alegere_2["follower_count"] >= alegere_1["follower_count"]:
+                alegere_1 = alegere_2
                 scor = scor + 1
-                alegere_2 = alegere_1
-                alegere_1 = random_()
+                alegere_2 = random_()
             else:
                 game0 = False
         elif alegere != "a" or alegere != "b":
